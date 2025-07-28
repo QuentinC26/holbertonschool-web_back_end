@@ -4,7 +4,7 @@ add a annotation for function with list
 """
 
 
-def sum_list(input_list: float) -> float:
+def sum_list(input_list: list[float]) -> float:
     """
     add a annotation for function with list
     """

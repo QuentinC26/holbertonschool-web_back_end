@@ -9,4 +9,9 @@ def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
     add a annotation for function with object callable
     """
-    return multiplier
+    def other_multiplier(new_multiplier: float) -> Callable[[float], float]:
+        """
+        add a annotation for function with object callable
+        """
+        return multiplier * new_multiplier
+    return other_multiplier

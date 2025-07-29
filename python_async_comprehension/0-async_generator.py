@@ -4,10 +4,10 @@ create a generator
 '''
 import asyncio
 import random
-from typing import Union, List
+from typing import Union, 
 
 
-async def async_generator() -> List[Union[int, float]]:
+async def async_generator() -> Generator[float, none, none]:
     '''
     create a generator
     '''

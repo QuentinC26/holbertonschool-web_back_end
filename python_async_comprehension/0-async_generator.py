@@ -7,7 +7,7 @@ import random
 from typing import Union, 
 
 
-async def async_generator() -> Generator[float, none, none]:
+async def async_generator() -> Generator[float, None, None]:
     '''
     create a generator
     '''

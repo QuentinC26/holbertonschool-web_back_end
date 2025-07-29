@@ -6,7 +6,8 @@ import asyncio
 import time
 async_comprehension = __import__("1-async_comprehension").async_comprehension
 
-async def measure_runtime() -> float :
+
+async def measure_runtime() -> float:
     start_time = time.time()
     four_parallel = [
         asyncio.create_task(async_comprehension()),

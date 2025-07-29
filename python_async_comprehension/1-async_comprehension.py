@@ -14,5 +14,7 @@ async def async_comprehension() -> List[float]:
     '''
     comprehension_list = []
     async for result in async_generator():
+        if len(comprehension_list) > 10:
+            break
         comprehension_list.append(result)
     return comprehension_list

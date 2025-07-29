@@ -4,11 +4,11 @@ Import async_generator from the previous task
 '''
 import asyncio
 import random
-from typing import List
+from typing import Generator
 async_generator = __import__('0-async_generator').async_generator
 
 
-async def async_comprehension() -> List[float]:
+async def async_comprehension() -> Generator[float, None, float]:
     '''
     Import async_generator from the previous task
     '''

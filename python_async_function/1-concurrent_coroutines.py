@@ -19,7 +19,7 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
     # end = result
     # i use end for respect pycodestyle restriction
     end = await asyncio.gather(*multiple_wait_random)
-    lens = len(result)
+    lens = len(end)
     for size in range(lens-1):
         for index in range(lens-size-1):
             if end[index] > end[index + 1]:

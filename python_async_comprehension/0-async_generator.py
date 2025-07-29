@@ -4,7 +4,7 @@ create a generator
 '''
 import asyncio
 import random
-from typing import Union, 
+from typing import Union, Generator
 
 
 async def async_generator() -> Generator[float, None, None]:

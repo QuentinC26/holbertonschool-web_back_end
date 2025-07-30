@@ -10,4 +10,4 @@ async def async_comprehension() -> List[float]:
     '''
     Import async_generator from the previous task
     '''
-    return [async_comprehension async for async_comprehension in async_generator() if async_comprehension % 2]
+    return [index async for index in async_generator()]

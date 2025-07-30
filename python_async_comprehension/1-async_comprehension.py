@@ -10,9 +10,4 @@ async def async_comprehension() -> List[float]:
     '''
     Import async_generator from the previous task
     '''
-    comprehension_list = []
-    async for index in async_generator():
-        if len(comprehension_list) == 10:
-            break
-        comprehension_list.append(index)
-    return comprehension_list
+    return [async_comprehension async for async_comprehension in async_generator()]

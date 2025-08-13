@@ -34,12 +34,6 @@ class Server:
         return (start_index, end_index)
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        start_index = (page - 1) * page_size
-        end_index = start_index + page_size
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
-        '''
-        if start_index > len(self.dataset()) or end_index > len(self.dataset()):
-            return []
-        '''
-        return self.dataset()[start_index:end_index]
+        

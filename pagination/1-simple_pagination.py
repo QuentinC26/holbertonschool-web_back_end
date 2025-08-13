@@ -4,10 +4,10 @@ Write a function named index_range that takes two integer arguments
 '''
 import csv
 import math
-from typing import List
+from typing import List, Tuple
 
 
-def index_range(page, page_size):
+def index_range(page: int, page_size: int) -> Tuple:
     '''
     Write a function named index_range that takes two integer arguments
     '''

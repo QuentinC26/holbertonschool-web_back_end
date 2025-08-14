@@ -50,6 +50,7 @@ class Server:
         """
         get hyper part
         """
+        get_page = self.get_page
         return {
             "page_size": len(self.dataset()),
             "page": page,

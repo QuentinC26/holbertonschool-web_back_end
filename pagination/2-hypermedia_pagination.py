@@ -4,7 +4,7 @@ Write a function named index_range that takes two integer arguments
 '''
 import csv
 import math
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Any
 
 
 def index_range(page: int, page_size: int) -> Tuple:
@@ -46,7 +46,7 @@ class Server:
             return []
         return self.dataset()[start_index:end_index]
 
-    def get_hyper(self, page = 1, page_size = 10):
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         """
         get hyper part
         """

@@ -44,7 +44,7 @@ class Server:
         dictionary = {
             "index": index,
             "data": self.__indexed_dataset,
-            "next_index": index + 1,
-            "page_size": page_size
+            "page_size": page_size,
+            "next_index": index + page_size
         }
         return dictionary

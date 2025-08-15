@@ -52,9 +52,9 @@ class Server:
         """
         get_page = self.get_page
         return {
-            "page_size": len(self.dataset()),
+            "page_size": len(get_page(page, page_size)),
             "page": page,
-            "data": self.dataset(),
+            "data": get_page(page, page_size),
             "next_page": page + 1,
             "prev_page": page - 1,
             "total_pages": page_size

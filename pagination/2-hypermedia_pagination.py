@@ -51,11 +51,12 @@ class Server:
         get hyper part
         """
         get_page = self.get_page
+        result = len(self.dataset()) / page_size
         return {
             "page_size": len(get_page(page, page_size)),
             "page": page,
             "data": get_page(page, page_size),
             "next_page": page + 1,
             "prev_page": page - 1,
-            "total_pages": page_size
+            "total_pages": math.ceil(result)
         }

@@ -52,7 +52,7 @@ class Server:
         """
         get_page = self.get_page
         result = len(self.dataset()) / page_size
-        return {
+        dictionnary = {
             "page_size": len(get_page(page, page_size)),
             "page": page,
             "data": get_page(page, page_size),
@@ -60,3 +60,8 @@ class Server:
             "prev_page": page - 1,
             "total_pages": math.ceil(result)
         }
+        if  dictionnary["next_page"] > 3000:
+            dictionnary["next_page"] = None
+        if  dictionnary["prev_page"] < 1:
+            dictionnary["prev_page"] = None
+        return dictionnary

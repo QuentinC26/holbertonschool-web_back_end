@@ -60,8 +60,8 @@ class Server:
             "prev_page": page - 1,
             "total_pages": math.ceil(result)
         }
-        if  dictionnary["next_page"] > dictionnary["total_pages"]:
+        if dictionnary["next_page"] > dictionnary["total_pages"]:
             dictionnary["next_page"] = None
-        if  dictionnary["prev_page"] < 1:
+        if dictionnary["prev_page"] < 1:
             dictionnary["prev_page"] = None
         return dictionnary

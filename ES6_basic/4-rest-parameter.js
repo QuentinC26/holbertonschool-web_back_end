@@ -1,7 +1,7 @@
 export default function returnHowManyArguments(...args) {
-  returnHowManyArguments = 0;
+  let sum = 0;
   for(let arg of args) {
-    returnHowManyArguments = returnHowManyArguments + arg;
+   sum = sum + arg;
   }
-  return returnHowManyArguments;
+  return sum;
 }

@@ -1,4 +1,4 @@
-import Currency from './3-currency';
+import currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
@@ -13,14 +13,14 @@ export default class Pricing {
   }
   get currency() {
     return this._currency;
-  }
+  } 
   set currency(currency) {
     return this._currency = currency;
   }
   displayFullPrice() {
     return this._amount + ' ' + this.currency.name + ' ' + '(' + this.currency.code + ')';
   }
-  convertPrice(amount, conversionRate) {
+  static convertPrice(amount, conversionRate) {
     return amount * conversionRate;
   }
 }

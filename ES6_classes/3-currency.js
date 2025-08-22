@@ -18,4 +18,4 @@ export default class HolbertonCourse {
   displayFullCurrency() {
     return this._name + ' ' + '(' + this._code + ')'
   }
- }
+}

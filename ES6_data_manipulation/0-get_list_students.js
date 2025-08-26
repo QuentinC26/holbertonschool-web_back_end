@@ -16,5 +16,9 @@ export default function getListStudents(id, firstName, location) {
     'location': 'San Francisco'
     }
   ]
-  return Array;
+  id = Array[0];
+  firstName = Array[1];
+  location = Array[2];
+  const NewArray = [id, firstName, location]
+  return NewArray;
 }

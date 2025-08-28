@@ -1,4 +1,3 @@
 export default function hasValuesFromArray(set, array) {
-  //has et every à voir
-  return array.every();
+  return array.every(set => set in array);
 }

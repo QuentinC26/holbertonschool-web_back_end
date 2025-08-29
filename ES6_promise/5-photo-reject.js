@@ -3,5 +3,5 @@ export default function uploadPhoto(filename) {
     Resolve()
     Reject()
   })
-  .catch((error) => {console.log(`${fileName} cannot be processed`)})
+  .catch((error) => {console.log(`${filename} cannot be processed`)})
 }

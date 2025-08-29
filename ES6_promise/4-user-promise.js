@@ -8,5 +8,10 @@ export default function signUpUser(firstName, lastName) {
         firstName,
         lastName,
     }
-  })
+ })
 }
+
+// code plus adapté :
+// export default function signUpUser(firstName, lastName) {
+//  return Promise.resolve({firstName, lastName,})
+// }

@@ -6,5 +6,5 @@ export default function uploadPhoto(filename) {
       Reject()
     }
   })
-  .catch((error) => { console.log(`${filename} cannot be processed`)})
+  .catch((error) => { console.error(`${filename} cannot be processed`)})
 }

@@ -1,8 +1,7 @@
 *-main.py
 __pycache__
 node_modules
-*.json
-.eslintrc.js
-babel.config.js
+package-lock.json
 *.sh
 *-main.js
+utils.js

@@ -7,8 +7,8 @@ function countStudents(path) {
     const FirstList = [];
     const CSList = [];
     const SWEList = [];
-    for (const index in line) {
-      const separatorOne = line[index].split(',');
+    for (const lineItem of line) {
+      const separatorOne = lineItem.split(',');
       FirstList.push(separatorOne);
     }
     FirstList.shift();

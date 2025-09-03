@@ -14,10 +14,10 @@ function countStudents(path) {
     FirstList.shift();
     for (const NewIndex of FirstList) {
       if (NewIndex[3] === 'CS') {
-        CSList.push(' ' + NewIndex[0]);
+        CSList.push(` ${NewIndex[0]}`);
       }
       if (NewIndex[3] === 'SWE') {
-        SWEList.push(' ' + NewIndex[0]);
+        SWEList.push(` ${NewIndex[0]}`);
       }
     }
     console.log(`Number of students: ${(FirstList.length)}`);

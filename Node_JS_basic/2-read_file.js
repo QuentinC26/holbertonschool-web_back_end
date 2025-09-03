@@ -12,12 +12,12 @@ function countStudents(path) {
       FirstList.push(separatorOne);
     }
     FirstList.shift();
-    for (const indexTwo in FirstList) {
-      if (FirstList[indexTwo][3] === 'CS') {
-        CSList.push(FirstList[indexTwo][0]);
+    for (const NewIndex of FirstList) {
+      if (NewIndex[3] === 'CS') {
+        CSList.push(' ' + NewIndex[0]);
       }
-      if (FirstList[indexTwo][3] === 'SWE') {
-        SWEList.push(FirstList[indexTwo][0]);
+      if (NewIndex[3] === 'SWE') {
+        SWEList.push(' ' + NewIndex[0]);
       }
     }
     console.log(`Number of students: ${(FirstList.length)}`);

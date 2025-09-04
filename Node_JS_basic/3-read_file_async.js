@@ -2,9 +2,9 @@ const fs = require('fs').promises;
 
 async function countStudents(path) {
   try {
-   const thedata = await fs.promises.readFile(path, 'utf8');
-   const line = thedata.trim().split('\n');
-   const FirstList = [];
+    const thedata = await fs.promises.readFile(path, 'utf8');
+    const line = thedata.trim().split('\n');
+    const FirstList = [];
     const CSList = [];
     const SWEList = [];
     for (const lineItem of line) {

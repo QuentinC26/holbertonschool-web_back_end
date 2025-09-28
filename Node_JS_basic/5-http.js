@@ -1,37 +1,51 @@
 const http = require('http');
 const fs = require('fs');
-const path = process.argv[2];
+
+const filePath = process.argv[2];
 
 const app = http.createServer((req, res) => {
   if (req.url === '/') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    const data = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' });
-        const line = data.trim().split('\n');
-        const FirstList = [];
-        const CSList = [];
-        const SWEList = [];
-        for (const lineItem of line) {
-          const separatorOne = lineItem.split(',');
-          FirstList.push(separatorOne);
-        }
-        FirstList.shift();
-        for (const NewIndex of FirstList) {
-          if (NewIndex[3] === 'CS') {
-            CSList.push(` ${NewIndex[0]}`);
-          }
-          if (NewIndex[3] === 'SWE') {
-            SWEList.push(` ${NewIndex[0]}`);
-          }
-        }
-        console.log(`Number of students: ${(FirstList.length)}`);
-        console.log(`Number of students in CS: ${(CSList.length)}. List:${(CSList)}`);
-        console.log(`Number of students in SWE: ${(SWEList.length)}. List:${(SWEList)}`);
-  } else {
-  throw new Error('Cannot load the database')
-}})
+    try {
+      const data = fs.readFileSync(filePath, { encoding: 'utf8', flag: 'r' });
+      const lines = data.trim().split('\n');
+      const students = [];
+      const csStudents = [];
+      const sweStudents = [];
 
-  .listen(1245);
+      lines.shift();
+
+      for (const line of lines) {
+        const student = line.split(',');
+        students.push(student);
+      }
+
+      for (const student of students) {
+        if (student[3] === 'CS') {
+          csStudents.push(` ${student[0]}`);
+        } else if (student[3] === 'SWE') {
+          sweStudents.push(` ${student[0]}`);
+        }
+      }
+
+      console.log(`Number of students: ${students.length}`);
+      console.log(`Number of students in CS: ${csStudents.length}. List:${csStudents}`);
+      console.log(`Number of students in SWE: ${sweStudents.length}. List:${sweStudents}`);
+
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('This is the list of students');
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'text/plain' });
+      res.end('Cannot load the database');
+    }
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not found');
+  }
+});
+
+app.listen(1245);
 
 module.exports = app;

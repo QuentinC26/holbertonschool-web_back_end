@@ -9,7 +9,7 @@ export default async function handleProfileSignup(firstName, lastName, filename)
 
   return results.map(result => {
     if (result.status === 'rejected') {
-      return { status: 'rejected', value: result.reason };
+      return { status: 'rejected', value: result.reason.toString() };
     }
     return result;
   });
